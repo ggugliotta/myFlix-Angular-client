@@ -1,4 +1,4 @@
-src/app/AppComponent.module.ts
+//src/app/AppComponent.module.ts
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -28,7 +28,7 @@ import { UserRegistrationFormComponent } from './user-registration-form/user-reg
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
     MatInputModule,
     MatButtonModule,
     MatCardModule,
