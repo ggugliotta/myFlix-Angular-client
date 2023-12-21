@@ -95,7 +95,7 @@ export class FetchApiDataService {
 
   // Making the api call for the user endpoint
   getUser(): Observable<any> {
-    const user = JSON.parse(localstorage.getItem('user') || '{}');
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
     return user;
   }
 
@@ -116,7 +116,7 @@ export class FetchApiDataService {
   addFavoriteMovie(movieId: string): Observable<any> {
     const token = localStorage.getItem('token');
     const username = JSON.parse(localStorage.getItem('user') || '{}');
-    return this.http.post(apiUrl + `users/${user.Username}/${movieId}`, {}, {
+    return this.http.post(apiUrl + `users/user/${movieId}`, {}, {
       headers: new HttpHeaders({
         "Content-Type": "application/json",
         Authorization: 'Bearer ' + token,

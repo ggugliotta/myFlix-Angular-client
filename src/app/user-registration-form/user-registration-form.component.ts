@@ -4,7 +4,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 
 // Import brings in the API calls 
-import { UserRegistrationService } from '../fetch-api-data.service';
+import { FetchApiDataService } from '../fetch-api-data.service';
 
 // Import is used to display notifications back to the user 
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -16,18 +16,13 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class UserRegistrationFormComponent implements OnInit {
 
-  @Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };
+@Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };
 
-  /**
-   * Called when creating an instance of the class
-   * @param fetchApiData
-   * @param dialogRef
-   * @param snackBar
-   */
   constructor(
-    public fetchApiData: UserRegistrationService,
+    public fetchApiDataService: FetchApiDataService,
     public dialogRef: MatDialogRef<UserRegistrationFormComponent>,
-    public snackBar: MatSnackBar) { }
+    public snackBar: MatSnackBar
+   ) { }
 
   ngOnInit(): void {
   }
@@ -38,15 +33,16 @@ export class UserRegistrationFormComponent implements OnInit {
    * @returns alert indicating a successful registration or an error 
    */
   registerUser(): void {
-    this.fetchApiData.userRegistration(this.userData).subscribe((result) => {
+    this.fetchApiDataService.userRegistration(this.userData).subscribe((result) => {
       // Logic for a successful user registration goes here! (To be implemented)
       this.dialogRef.close(); // This will close the modal on success!
       console.log(result);
       this.snackBar.open('User registration successful', 'OK', {
         duration: 2000
       });
-    }, (result) => {
-      this.snackBar.open('User registration successful', 'OK', {
+
+    }, (response) => {
+      this.snackBar.open(response, 'OK', {
         duration: 2000
       });
     });

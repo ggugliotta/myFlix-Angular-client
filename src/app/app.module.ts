@@ -33,7 +33,8 @@ import { UserRegistrationFormComponent } from './user-registration-form/user-reg
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
