@@ -50,6 +50,7 @@ loginUser(): void {
         });
 
         this.router.navigate(['movies']);
+        this.router.navigate(['profile']);
       }, 
       (result) => {
         this.snackBar.open(result, 'OK', {
