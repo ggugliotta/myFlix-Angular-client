@@ -4,12 +4,13 @@ import { catchError } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Token } from '@angular/compiler';
 
 //Declaring the api url that will provide data for the client app
 const apiUrl = 'https://moviesapi-zy5e.onrender.com/';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FetchApiDataService {
   // Inject the HttpClient module to the constructor params
@@ -35,9 +36,8 @@ export class FetchApiDataService {
    * @param userDetails
    * @returns an observable with the user
    */
-  public userLogin(userDetails: any): Observable<any> {
-    console.log(userDetails);
-    return this.http.post(apiUrl + 'login', userDetails).pipe(
+  public userLogin(username: string, password: string): Observable<any> {
+    return this.http.post(apiUrl + 'login', { username, password }).pipe(
     catchError(this.handleError)
     );
   }
@@ -47,6 +47,7 @@ export class FetchApiDataService {
    */
   getAllMovies(): Observable<any> {
     const token = localStorage.getItem('token');
+    console.log('Token:', token); // Log the token value 
     return this.http.get(apiUrl + 'movies', {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + token,
@@ -190,8 +191,9 @@ private handleError(error: HttpErrorResponse): any {
         `Error Status code ${error.status}, ` +
         `Error body is: ${error.error}`);
     }
- 
-
-    return throwError('Something bad happened; please try again later.');
+    return throwError(
+      () => new Error('Something bad happened; please try again later.')
+    );
   }
 }
+    

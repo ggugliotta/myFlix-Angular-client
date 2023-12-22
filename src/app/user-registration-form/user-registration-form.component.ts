@@ -33,25 +33,20 @@ constructor(
    * @returns alert indicating a successful registration or an error 
    */
   registerUser(): void {
-    this.fetchApiData.userRegistration(this.userData).subscribe((result) => {
+    this.fetchApiData.userRegistration(this.userData).subscribe(
+      (result) => {
       // Logic for a successful user registration goes here! (To be implemented)
       this.dialogRef.close(); // This will close the modal on success!
       console.log(result);
-      this.snackBar.open('user registered successfully!', 'OK', {
-        duration: 2000
+      this.snackBar.open(result, 'OK', {
+        duration: 2000,
       });
-  
-  // log user in and navigate to movies
-  this.fetchApiData.userLogin(this.userData).subscribe((result) => {
-    localStorage.setItem('user', JSON.stringify(result.user));
-    localStorage.setItem('token', result.token);
-  });
-
-  }, (response) => {
-    this.snackBar.open(response, 'OK', {
+  }, 
+  (result) => {
+    this.snackBar.open(result, 'OK', {
      duration: 2000
       });
    });
-}
+  }
 
 }
