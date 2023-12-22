@@ -16,10 +16,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class UserRegistrationFormComponent implements OnInit {
 
-@Input() userData = { Name: '', Username: '', Password: '', Email: '', Birthday: '' };
+  @Input() userData = { Name: '', Username: '', Password: '', Email: '', Birthday: '' };
 
-  constructor(
-    public fetchApiDataService: FetchApiDataService,
+constructor(
+    public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<UserRegistrationFormComponent>,
     public snackBar: MatSnackBar
    ) { }
@@ -33,19 +33,25 @@ export class UserRegistrationFormComponent implements OnInit {
    * @returns alert indicating a successful registration or an error 
    */
   registerUser(): void {
-    this.fetchApiDataService.userRegistration(this.userData).subscribe((result) => {
+    this.fetchApiData.userRegistration(this.userData).subscribe((result) => {
       // Logic for a successful user registration goes here! (To be implemented)
       this.dialogRef.close(); // This will close the modal on success!
       console.log(result);
-      this.snackBar.open('User registration successful', 'OK', {
+      this.snackBar.open('user registered successfully!', 'OK', {
         duration: 2000
       });
+  
+  // log user in and navigate to movies
+  this.fetchApiData.userLogin(this.userData).subscribe((result) => {
+    localStorage.setItem('user', JSON.stringify(result.user));
+    localStorage.setItem('token', result.token);
+  });
 
-    }, (response) => {
-      this.snackBar.open(response, 'OK', {
-        duration: 2000
+  }, (response) => {
+    this.snackBar.open(response, 'OK', {
+     duration: 2000
       });
-    });
-  }
+   });
+}
 
 }

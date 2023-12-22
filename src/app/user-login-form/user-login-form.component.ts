@@ -12,8 +12,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { Router } from '@angular/router';
 
-import { UserLoginService } from '../fetch-api-data.service';
-
 @Component({
   selector: 'app-user-login-form',
   templateUrl: './user-login-form.component.html',
