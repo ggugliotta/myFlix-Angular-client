@@ -15,13 +15,13 @@ export class MovieCardComponent implements OnInit {
 
   movies: any[] = [];
 
-  constructor(public fetchApiData: FetchApiDataService) {}
+  constructor(public dialog: MatDialog, public fetchApiData: FetchApiDataService) {}
 
   ngOnInit(): void {
     this.getMovies();
   }
 
-  getMovies(): void {
+  public getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
       console.log(this.movies);
@@ -29,20 +29,75 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-  openGenreDialog(): void {
-    this.dialog.open(DirectorComponent, {
-      width: '280px'
-    });
+
+/**
+ * Check to see if the movie is in the user's list of favorites
+ * @param movie_id  
+ * @returns boolean
+ */
+  public isFavoriteMovie(movieId: string): boolean {
+    return this.user.favoriteMovies.includes(movieId);
   }
 
-  openDirectorDialog(): void {
+
+  /** 
+   * Adds the movie to the user's list of favorites when icon is clicked
+   * @param movie_id
+   */
+  public addToFavoriteMovies(movie_id: string){
+    this.user.favoriteMovies.push(movie_id);
+    localStorage.setItem('user', JSON.stringify(this.user));
+      this.fetchApiData.addFavoriteMovie(movie_id).subscribe((response) => {
+      console.log(response);
+      })
+      this.snackBar.open('Added to favorites!', 'OK', {
+        duration: 2000
+      });
+  }
+
+
+  /**
+   * Removes the movie from the user's list of favorites when icon is clicked
+   * @param movie_id
+   */
+  public removeFromFavoriteMovies(movie_id: any){
+    this.user.favoriteMovies = this.user.favoriteMovies.filter((id: string) => id !== movie_id);
+    localStorage.setItem('user', JSON.stringify(this.user));
+      this.fetchApiData.deleteFavoriteMovie().subscribe((response) => {
+      console.log(response);
+      })
+      this.snackBar.open('Removed from favorites!', 'OK', {
+        duration: 2000
+      });
+  }
+
+
+
+/**
+ * Opens the genre dialog to show genre details once the button is clicked
+ * @param genre
+ */
+  openGenreDialog(): void {
     this.dialog.open(GenreComponent, {
-      width: '280px'
+      width: '400px', height: '300 px'
     });
   }
+  /**
+   * Opens the director dialog to show director details once the button is clicked
+   * @param director
+   */
+  openDirectorDialog(): void {
+    this.dialog.open(DirectorComponent, {
+      width: '400px', height: '300 px'
+    });
+  }
+  /**
+   * Opens the movie details dialog to show movie details once the button is clicked
+   * @param description
+   */
     openMovieDetailsDialog(): void {
     this.dialog.open(MovieDetailsComponent, {
-      width: '280px'
+      width: '400px', height: '300 px'
     });
   }
 

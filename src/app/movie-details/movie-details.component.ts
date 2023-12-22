@@ -1,7 +1,5 @@
-import { Component } from '@angular/core';
-import { FetchApiDataService } from '../fetch-api-data.service';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-movie-details',
@@ -10,8 +8,6 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class MovieDetailsComponent {
   constructor(
-    public fetchApiData: FetchApiDataService,
-    public dialogRef: MatDialogRef<MovieDetailsComponent>,
     @Inject(MAT_DIALOG_DATA)
     public data: {
       title: string; 
@@ -25,5 +21,6 @@ export class MovieDetailsComponent {
       rating: string; 
     }
   ) { }
-  ngOnInit(): void { }
-  }
+
+  onNoClick(): void { }
+}
