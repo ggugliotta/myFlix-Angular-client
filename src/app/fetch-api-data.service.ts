@@ -6,7 +6,7 @@ import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 //Declaring the api url that will provide data for the client app
-const apiUrl = 'https://moviesapi-zy5e.onrender.com';
+const apiUrl = 'https://moviesapi-zy5e.onrender.com/';
 
 @Injectable({
   providedIn: 'root'
@@ -37,7 +37,7 @@ export class FetchApiDataService {
    */
   public userLogin(userDetails: any): Observable<any> {
     console.log(userDetails);
-    return this.http.post(apiUrl + 'login?'+ new URLSearchParams(userDetails), {}).pipe(
+    return this.http.post(apiUrl + 'login', userDetails).pipe(
     catchError(this.handleError)
     );
   }
