@@ -3,13 +3,15 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { UserRegistrationFormComponent } from '../user-registration-form/user-registration-form.component';
+import { WelcomePageComponent } from '../welcome-page/welcome-page.component';
 
-const User = {
-  _id: 'string', 
-  username: 'string', 
-  password: 'string', 
-  email: 'string', 
-  favoriteMovies: 'any[]'
+type User = {
+  _id?: string, 
+  username?: string, 
+  password?: string, 
+  email?: string, 
+  favoriteMovies?: any[]
 };
 
 @Component({
@@ -19,62 +21,60 @@ const User = {
 })
 export class UserProfileComponent implements OnInit {
 
-  user: userData = {};
+  user: any = {Name: '', Username: '', Password: '', Email: '', Birthday: ''};
   favoriteMovies: any[] = [];
-
-  @Input() userData = { Name: '', Username: '', Password: '', Email: '', Birthday: '' };
 
   constructor(
     public fetchApiData: FetchApiDataService,
     public router: Router,
     public snackBar: MatSnackBar
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    const user = this.getUser();
-    this.getfavoriteMovies();
-
-    if (!user._id) {
-      this.router.navigate(['welcome']);
-    }
-
-    this.user = user; 
-
-    this.userData = {
-      username: user.username || "",
-      password: user.password || "",
-      email: user.email || "",
-    };
+    this.loadUser();
   }
 
-  getUser(): void {
-    return JSON.parse(localStorage.getItem('user') || '{}');
+  public loadUser(): void {
+    this.user = JSON.parse(localStorage.getItem('user') || '{}');
+     this.fetchApiData.getAllMovies().subscribe((movies) => {
+     this.favoriteMovies = movies.filter((movie: any) => this.user.favoriteMovies?.includes(movies._id));
+     });
   }
 
-  updateUser(): void {
-    this.fetchApiData.editUserInfo(this.userData).subscribe((result) => {
-      localStorage.setItem('user', JSON.stringify(result));
+  /**
+   * Return to home page
+   */
 
-      console.log('updateUser called');
-      console.log('result:', result);
+  public back(): void {
+    this.router.navigate(['movies']);
+  }
 
-      this.user = result;
-      this.snackBar.open('Profile updated successfully!', 'OK', {
-        duration: 2000
-      });
+  /**
+   * Open user update dialog to update user info
+   */
+  /**editUserInfo(): void {
+    this.fetchApiData.editUserInfo().subscribe((users) => {
+      this.user = updatedUser
     });
   }
+  */
 
-  getfavoriteMovies(): void {
-    this.fetchApiData.getAllMovies().subscribe((movies) => {
-      this.favoriteMovies = movies.filter((movie: any) => {
-      return this.user.favoriteMovies?.includes(movies._id);
+  deleteFavoriteMovie(favoriteMovie: string): void {
+    this.fetchApiData.deleteFavoriteMovie().subscribe((favoriteMovie) => {
+      this.favoriteMovies = this.favoriteMovies.filter((movie: any) => {
+      return movie._id !== favoriteMovie;
       });
-  });
-}
+      this.snackBar.open('Movie removed from favorites!', 'OK', {
+        duration: 2000
+      });
+    })
+  }
 
+  /**
+   * Deletes user account and returns to welcome page
+   */
   deleteUser(): void {
-    this.fetchApiData.deleteUser().subscribe((result) => {
+    this.fetchApiData.deleteUser().subscribe((result: any) => {
       localStorage.clear();
       this.router.navigate(['welcome']);
       this.snackBar.open('Profile deleted successfully!', 'OK', {
@@ -82,15 +82,4 @@ export class UserProfileComponent implements OnInit {
       });
     });
   }
-
-  deleteFavoriteMovie(): void {
-    this.fetchApiData.deleteFavoriteMovie().subscribe((result) => {
-      const token = localStorage.getItem('token');
-      const username = localStorage.getItem('user');
-      return this.delete(FavoriteMovie);
-      });
-      this.snackBar.open('Movie removed from favorites!', 'OK', {
-        duration: 2000
-      });
-    }
-  }
+}
