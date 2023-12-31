@@ -33,8 +33,7 @@ export class FetchApiDataService {
    * @param userDetails
    * @returns an observable with the user
    */
-  public userLogin(userDetails: any): Observable<any> {
-    console.log(userDetails);
+  public userLogin(username: string, password: string): Observable<any> {
     return this.http.post(apiUrl + 'login', { Username: username, Password: password }).pipe(
     catchError(this.handleError)
     );
