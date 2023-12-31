@@ -34,7 +34,7 @@ ngOnInit(): void {
 // This is the function responsible for sending the form inputs to the backend
 loginUser(): void {
   console.log('Login');
-  this.fetchApiData.userLogin(this.userData).subscribe((result) => {
+  this.fetchApiData.userLogin(this.userData.Username, this.userData.Password).subscribe((result) => {
         console.log('result:', JSON.stringify(result));
         // Store username and token in local storage
         localStorage.setItem('user', JSON.stringify(result.user));
