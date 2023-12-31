@@ -33,13 +33,14 @@ export class FetchApiDataService {
    * @param userDetails
    * @returns an observable with the user
    */
-  public userLogin(username: string, password: string): Observable<any> {
-    return this.http.post(apiUrl + 'login', { username, password }).pipe(
+  public userLogin(userDetails: any): Observable<any> {
+    console.log(userDetails);
+    return this.http.post(apiUrl + 'login', { Username: username, Password: password }).pipe(
     catchError(this.handleError)
     );
   }
 
-  /** Making the api call for all movies endpoint
+  /** Making the api call for all movies endpoint 
    * @returns an observable with an array of movies
    */
   getAllMovies(): Observable<any> {
