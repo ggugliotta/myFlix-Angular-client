@@ -1,65 +1,40 @@
-<div>
-<div class="card-wrapper" style="display: flex;">
-    <mat-card class="movie-card" *ngFor="let movie of movies; let i=index;" style="flex: 1 1 auto;">
-        <mat-card-header class="movie-title">
-            <mat-card-title>{{movie.title}}</mat-card-title>
-                <mat-card-subtitle>Directed by: {{movie.Director.name}}</mat-card-subtitle>
+<div style="display: flex;">
+    <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto;">
+        <mat-card-header>
+        <mat-card-title>{{movie.Title}}</mat-card-title>
+            <mat-card-subtitle>Directed by: {{movie.Director.Name}}</mat-card-subtitle>
         </mat-card-header>
-        <div class="img-wrapper">
-            <img 
-                mat-card-image
-                src={{movie.ImageUrl}} 
-                alt= {{movie.title}} 
-            />
-        </div>
-            
-        <mat-card-actions class="movie-info">
+        <img class="img" src={{movie.ImagePath}} alt= {{movie.Title}} />
+        <mat-card-actions>
             <button
-                mat-raised-button
-                (click)="openGenreDialog()"
+                mat-button
                 color="primary"
+                (click)="openGenreDialog()"
             >
                 Genre
             </button>
-
             <button
-                mat-raised-button
-                (click)="openDirectorDialog()"
+                mat-button
                 color="primary"
+                (click)="openDirectorDialog()"
             >
                 Director
             </button>
-
             <button
-                mat-raised-button
-                (click)="openMovieDetailsDialog()"
+                mat-button
                 color="primary"
+                (click)="openSynopsisDialog()"
             >
                 Synopsis
             </button>
-
-            <button mat-button
-                    (click)="addToFavoriteMovies(movie._id)" 
-                    *ngIf="!isFavorite(movie._id)" 
-                    color="primary"
-                    class="heart-button"
-                    >
-                    
-                    <mat-icon>favorite_border</mat-icon>
+            <button
+                mat-button
+                (click)=""addFavoriteMovie()"
+                *ngIf="!isFavoriteMovie()"
+            >
+            <mat-icon>favorite_border</mat-icon>
             </button>
-
-            <button mat-button
-                    (click)="removeFromFavoriteMovies(movie._id)" 
-                    *ngIf="isFavorite(movie._id)" 
-                    color="primary"
-                    class="heart-button"
-                    >
-                        <mat-icon>favorite</mat-icon>
-            </button>
-
-             </mat-card-actions>
-        </mat-card>
-    </div>
+        </mat-card-actions>
+    </mat-card>
 </div>
-```
 
