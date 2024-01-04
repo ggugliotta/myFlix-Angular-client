@@ -1,10 +1,11 @@
 // src/app/movie-card/movie-card.component.ts
 import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
+import { Router } from '@angular/router';
 import { GenreComponent } from '../genre/genre.component';
 import { DirectorComponent } from '../director/director.component';
 import { MovieDetailsComponent } from '../movie-details/movie-details.component';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -18,13 +19,18 @@ export class MovieCardComponent implements OnInit {
   user: any = {};
 
   constructor(
+    public fetchApiData: FetchApiDataService,
+    public router: Router, 
     public dialog: MatDialog, 
-    public fetchApiData: FetchApiDataService
+    public snackBar: MatSnackBar
     ) { }
 
   ngOnInit(): void {
     this.getMovies();
   }
+  /**
+   * @returns all the movie list 
+   */
 
   public getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
@@ -39,7 +45,7 @@ export class MovieCardComponent implements OnInit {
  * @param movie_id  
  * @returns boolean
  */
-  public isFavoriteMovie(movieId: string): boolean {
+  public isFavorite(movieId: string): boolean {
     return this.user.favoriteMovies.includes(movieId);
   }
 
@@ -83,7 +89,7 @@ export class MovieCardComponent implements OnInit {
  */
   openGenreDialog(): void {
     this.dialog.open(GenreComponent, {
-      width: '400px', height: '300 px'
+        width: '400px', height: '300px'
     });
   }
   /**
@@ -92,7 +98,7 @@ export class MovieCardComponent implements OnInit {
    */
   openDirectorDialog(): void {
     this.dialog.open(DirectorComponent, {
-      width: '400px', height: '300 px'
+      width: '400px', height: '300px'
     });
   }
   /**
@@ -101,7 +107,7 @@ export class MovieCardComponent implements OnInit {
    */
     openMovieDetailsDialog(): void {
     this.dialog.open(MovieDetailsComponent, {
-      width: '400px', height: '300 px'
+      width: '400px', height: '300px'
     });
   }
 
