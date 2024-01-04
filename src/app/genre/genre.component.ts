@@ -8,6 +8,10 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrl: './genre.component.css'
 })
 export class GenreComponent {
+
+  movies: any[] = [];
+  user: any = {};
+
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {
