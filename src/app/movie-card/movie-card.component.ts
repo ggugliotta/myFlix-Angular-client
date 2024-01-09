@@ -5,8 +5,21 @@ import { Router } from '@angular/router';
 import { GenreComponent } from '../genre/genre.component';
 import { DirectorComponent } from '../director/director.component';
 import { MovieDetailsComponent } from '../movie-details/movie-details.component';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Time } from '@angular/common';
+
+interface Genre{
+  Name: string;
+  Description: string;
+}
+
+interface Director{
+  Name: string;
+  Bio: string;
+  Birth: Time;
+  Movies: string;
+}
 
 @Component({
   selector: 'app-movie-card',
