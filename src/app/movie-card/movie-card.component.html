@@ -1,5 +1,4 @@
 <div style="display: flex;" class="movie-page">
-    <app-navbar></app-navbar>
 <div class="movie-view">
     <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto;">
         <mat-card-header>
@@ -12,8 +11,7 @@
                 mat-button
                 color="primary"
                 (click)="openGenreDialog(
-                    movie.Genre.Name,
-                    movie.Genre.Description
+                    
                 )"
                 aria-label="View Genres"
             >
@@ -23,10 +21,7 @@
                 mat-button
                 color="primary"
                 (click)="openDirectorDialog(
-                    movie.Director.Name,
-                    movie.Director.Bio,
-                    movie.Director.Birth,
-                    movie.Director.Death
+                   
                 )"
                 aria-label="View Director"
             >
@@ -36,11 +31,7 @@
                 mat-button
                 color="primary"
                 (click)="openMovieDetailsDialog(
-                    movie.Title, 
-                    movie.Description, 
-                    movie.ImagePath, 
-                    movie.Director.Name, 
-                    movie.Genre.Name
+                  
                     )"
                 aria-label="View Movie Details"
             >
