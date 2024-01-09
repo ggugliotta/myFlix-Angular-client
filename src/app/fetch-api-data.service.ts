@@ -22,7 +22,6 @@ export class FetchApiDataService {
   * @returns an observable with the user
   */
   public userRegistration(userDetails: any): Observable<any> {
-    console.log(userDetails);
     return this.http.post(apiUrl + 'users', userDetails).pipe(
     catchError(this.handleError)
     );
