@@ -2,6 +2,49 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.7.
 
+ <h1 align="center">Hi 👋, I'm Gabriella Gugliotta</h1>
+<h3 align="center">I am a passionate full stack developer from the United States</h3>
+
+<h1 align="center">Welcome to the client-side of Flickette </h1>
+
+- 🔭 This application is a single-page app (SPA) responsive app with routing, interactions, multiple interface views, and a contemporary user experience.
+
+ <br/>
+<p align="center">
+  <a href="https://github.com/ggugliotta/myFlix-Angular-client">
+    <img src="Flickette Home Page Screenshot.png" alt="Logo">
+  </a>
+
+  <p align="center">
+    Flickette Home Screen
+    <br/>
+
+ <br/>
+<p align="center">
+  <a href="https://github.com/ggugliotta/myFlix-Angular-client">
+    <img src="Flickette Movie View Screenshot.png" alt="Logo">
+  </a>
+
+  <p align="center">
+    Flickette Movie View
+    <br/>
+
+
+- Flickette is a movie application built for movie fans who enjoy learning information about a variety of films. Users are able to access this application whenever they want to read and save information about their favorite movies. This app is [hosted online]() and can be viewed on any device at any time anywhere for complete user experience. This [client-side project](github.com/ggugliotta/myFlix-Angular-client) supports the [server-side portion of this application](github.com/ggugliotta/movie-app) and was created to facilitate user requests and render responses from the server-side via multiple interface views. This app was built in ES2015+ with the full MEAN stack (MongoDB, Express, Angular, Node.js), and Angular Material UI library. A full list of project dependencies are outlined below. 
+
+- My movie app utilizes [render](render.com) to connect with my [API](www.mongodb.com) and [ghpages](ghpages.com)for the front-end server. View here: 
+
+- 👨‍💻 All of my projects are available at [github.com/ggugliotta](github.com/ggugliotta)
+
+- 💬 Ask me about **how I like working with Angular! Check out Flickette made with React here: **
+
+- 📫 Reach me at **gabriellagugliotta96@gmail.com**
+
+- 📄 Learn more about me [linkedin.com/gabriella-gugliotta](linkedin.com/gabriella-gugliotta)
+
+- ⚡ Fun fact **My next goal is to learn Python!**
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
@@ -25,3 +68,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
