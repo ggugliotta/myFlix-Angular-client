@@ -26,7 +26,7 @@ interface Director{
   templateUrl: './movie-card.component.html',
   styleUrl: './movie-card.component.css'
 })
-export class MovieCardComponent implements OnInit {
+export class MovieCardComponent {
 
   movies: any[] = [];
   user: any = {};
