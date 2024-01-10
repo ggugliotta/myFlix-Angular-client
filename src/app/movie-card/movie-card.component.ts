@@ -7,26 +7,14 @@ import { DirectorComponent } from '../director/director.component';
 import { MovieDetailsComponent } from '../movie-details/movie-details.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Time } from '@angular/common';
 
-interface Genre{
-  Name: string;
-  Description: string;
-}
-
-interface Director{
-  Name: string;
-  Bio: string;
-  Birth: Time;
-  Movies: string;
-}
 
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
   styleUrl: './movie-card.component.css'
 })
-export class MovieCardComponent {
+export class MovieCardComponent implements OnInit {
 
   movies: any[] = [];
   user: any = {};
@@ -58,8 +46,8 @@ export class MovieCardComponent {
  * @param movie_id  
  * @returns boolean
  */
-  public isFavorite(movieId: string): boolean {
-    return this.user.favoriteMovies.includes(movieId);
+  /* public isFavorite(movieId: string): boolean {
+    return favoriteMovies.(movieId);
   }
 
 
@@ -67,7 +55,7 @@ export class MovieCardComponent {
    * Adds the movie to the user's list of favorites when icon is clicked
    * @param movie_id
    */
-  public addToFavoriteMovies(movie_id: string){
+  /*public addToFavoriteMovies(movie_id: string){
     this.user.favoriteMovies.push(movie_id);
     localStorage.setItem('user', JSON.stringify(this.user));
       this.fetchApiData.addFavoriteMovie(movie_id).subscribe((response) => {
@@ -83,7 +71,7 @@ export class MovieCardComponent {
    * Removes the movie from the user's list of favorites when icon is clicked
    * @param movie_id
    */
-  public removeFromFavoriteMovies(movie_id: any){
+ /* public removeFromFavoriteMovies(movie_id: any){
     this.user.favoriteMovies = this.user.favoriteMovies.filter((id: string) => id !== movie_id);
     localStorage.setItem('user', JSON.stringify(this.user));
       this.fetchApiData.deleteFavoriteMovie().subscribe((response) => {
