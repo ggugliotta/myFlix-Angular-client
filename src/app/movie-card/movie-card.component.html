@@ -1,8 +1,11 @@
+<!-- src/app/movie-card/movie-card.component.html -->
 <div>
 <div class="card-wrapper" style="display: flex;">
-    <mat-card  style="flex: 1 1 auto;" class="card">
+    <mat-card>
+    <!--*ngFor="let movie of movies; let i=index;-->
         <mat-card-header>
-        <mat-card-title>movie.Title</mat-card-title>
+        <mat-card-title>Movie Title</mat-card-title>
+        <!--{{movie.Title}}-->
             <mat-card-subtitle>Directed by: </mat-card-subtitle>
         </mat-card-header>
         <div class="img-wrapper">

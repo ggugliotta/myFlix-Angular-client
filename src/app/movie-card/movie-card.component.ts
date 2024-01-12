@@ -15,9 +15,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrl: './movie-card.component.css'
 })
 export class MovieCardComponent implements OnInit {
-
   movies: any[] = [];
-  user: any = {};
+  users: any[] = [];
 
   constructor(
     public fetchApiData: FetchApiDataService,
