@@ -14,7 +14,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './movie-card.component.html',
   styleUrl: './movie-card.component.css'
 })
-export class MovieCardComponent implements OnInit {
+export class MovieCardComponent {
   movies: any[] = [];
   users: any[] = [];
 
@@ -32,7 +32,7 @@ export class MovieCardComponent implements OnInit {
    * @returns all the movie list 
    */
 
-  public getMovies(): void {
+  getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
       console.log(this.movies);
