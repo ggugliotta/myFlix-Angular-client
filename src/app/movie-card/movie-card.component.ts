@@ -40,6 +40,37 @@ export class MovieCardComponent {
     });
   }
 
+  /**
+ * Opens the genre dialog to show genre details once the button is clicked
+ * @param genre
+ */
+  openGenreDialog(): void {
+    this.dialog.open(GenreComponent, {
+        width: '400px', height: '300px'
+    });
+  }
+  /**
+   * Opens the director dialog to show director details once the button is clicked
+   * @param director
+   */
+  openDirectorDialog(): void {
+    this.dialog.open(DirectorComponent, {
+      width: '400px', height: '300px'
+    });
+  }
+  /**
+   * Opens the movie details dialog to show movie details once the button is clicked
+   * @param description
+   */
+    openMovieDetailsDialog(): void {
+    this.dialog.open(MovieDetailsComponent, {
+      width: '400px', height: '300px'
+    });
+  }
+
+}
+
+
 /**
  * Check to see if the movie is in the user's list of favorites
  * @param movie_id  
@@ -79,36 +110,4 @@ export class MovieCardComponent {
       console.log('Removed from favorites!', 'OK', {
         duration: 2000
       });
-  }
-
-
-
-/**
- * Opens the genre dialog to show genre details once the button is clicked
- * @param genre
- */
-  openGenreDialog(): void {
-    this.dialog.open(GenreComponent, {
-        width: '400px', height: '300px'
-    });
-  }
-  /**
-   * Opens the director dialog to show director details once the button is clicked
-   * @param director
-   */
-  openDirectorDialog(): void {
-    this.dialog.open(DirectorComponent, {
-      width: '400px', height: '300px'
-    });
-  }
-  /**
-   * Opens the movie details dialog to show movie details once the button is clicked
-   * @param description
-   */
-    openMovieDetailsDialog(): void {
-    this.dialog.open(MovieDetailsComponent, {
-      width: '400px', height: '300px'
-    });
-  }
-
-}
+  }*/
