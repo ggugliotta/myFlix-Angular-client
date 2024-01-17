@@ -14,6 +14,21 @@ export class NavbarComponent {
     public router: Router,
     public snackBar: MatSnackBar
   ) { }
+
+  /**
+   * navigates to movies
+   */
+  toMovies(): void {
+    this.router.navigate(['movies']);
+  }
+
+  /**
+   * navigates to profile
+   */
+  toProfile(): void {
+    this.router.navigate(['profile']);
+  }
+
   /**
    * logs out user and clears local storage
    */
