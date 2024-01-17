@@ -1,1 +1,28 @@
-<p>navbar works!</p>
+<div mat-toolbar *ngIf="isUserLoggedIn()">
+    <div mat-toolbar-row class="navbar-items">
+        <button 
+            class="navbar-item" 
+            mat-button 
+            aria-label="home" 
+            routerLink="/home"
+        >
+            Home
+        </button>
+
+        <button 
+            class="navbar-item" 
+            mat-button 
+            aria-label="profile" 
+            routerLink="/profile"
+         >
+            <mat-icon>Person</mat-icon>
+        </button>
+
+        <button 
+            mat-button 
+            aria-label="logout" 
+            (click)="logout()"
+        >
+            <mat-icon>exit_to_app</mat-icon>
+        </button>
+
