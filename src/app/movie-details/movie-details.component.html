@@ -1,5 +1,6 @@
 <!-- src/app/movie-details/movie-details.component.html -->
-  <mat-card class="movie-details-dialog" style="display:flex;">
+<div class="card wrapper">
+  <mat-card class="card" style="display:flex;">
     <mat-card-content>
         <div>
             <span class="label">Title: </span>
@@ -39,13 +40,14 @@
     </mat-card-content>
     <mat-card-actions>
         <button
-        class="director-close-button"
-          mat-stroked-button
+          class="movie-details-close-button"
+          mat-icon-button
           color="primary"
+          aria-label="close the movie details button"
           mat-dialog-close
-          aria-label="close the director details button"
         >
-          X
+          <mat-icon>X</mat-icon>
         </button>
     </mat-card-actions>
   </mat-card> 
+</div>

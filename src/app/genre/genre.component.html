@@ -1,10 +1,20 @@
-<mat-card class="genre-dialog" style="display:flex;">
+<div class="card wrapper">
+<mat-card class="card" style="display:flex;">
     <mat-card-title>
-        <h3 class="genre-dialog-title">Genre: {{ data.name }}</h3>
+        <h3 class="genre-dialog-title">Genre: </h3>
     </mat-card-title>
     <br />
     <mat-dialog-content class="genre-dialog-content">
-        Definiton: {{ data.description }}
+        Definiton: 
     </mat-dialog-content>
-    <button class="genre-close-button" aria-label="Close the genre details button" mat-dialog-close color="primary">X</button>
+    <button 
+        class="movie-details-close-button"
+        mat-icon-button
+        color="primary"
+        aria-label="close the movie details button"
+        mat-dialog-close
+     >
+        <mat-icon>X</mat-icon>
+    </button>
 </mat-card>
+</div>
