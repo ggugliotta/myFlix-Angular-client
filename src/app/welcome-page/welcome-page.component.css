@@ -1,11 +1,16 @@
 
-.main-page{
-    display: grid;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-
+.card{
+  width: 400px;;
+  height: 600px;
 
 }
+
+mat-card-title{
+    font-weight: bold;
+    font-size: 50px;
+    margin-bottom: 2px;
+}
+
 
 
   @media  (min-width:700px){

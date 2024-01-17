@@ -1,21 +1,29 @@
-<div class="main-page">
-    <h1>
-      Welcome to Flickette!
-    </h1>
-    <button
-      mat-raised-button
-      (click)="openUserRegistrationDialog()"
-      style="margin-right: 10px;"
-      color="primary"
-    >
-      Sign Up
-    </button>
-    <button
-      mat-raised-button
-      color="primary"
-      (click)="openUserLoginDialog()"
-      style="margin-right: 10px;"
-    >
-      Login
-    </button>
-  </div>
+<!-- src/app/welcome-page/welcome-page.component.html -->
+<div>
+<div class="card-wrapper" style="display: flex;">
+    <mat-card>
+        <mat-card-header>
+        <mat-card-title>Flickette</mat-card-title>
+            <mat-card-subtitle>Browse our collection now</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions>
+          <button class="sign-up-button"
+            mat-raised-button
+            (click)="openUserRegistrationDialog()"
+            style="margin-right: 10px;"
+            color="primary"
+           >
+            Sign Up
+          </button>
+          <button class="login-button"
+             mat-raised-button
+            color="primary"
+            (click)="openUserLoginDialog()"
+            style="margin-right: 10px;"
+          >
+            Login
+          </button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+</div>
