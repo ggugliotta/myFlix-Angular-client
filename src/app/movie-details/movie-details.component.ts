@@ -11,7 +11,7 @@ export class MovieDetailsComponent {
     @Inject(MAT_DIALOG_DATA)
     public movies: {
       title: string; 
-      imageUrl: string;
+      ImageUrl: string;
       description: string;
       genre: object; 
       director: object; 

@@ -1,0 +1,35 @@
+
+.main-page{
+    display: grid;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+
+
+}
+
+
+  @media  (min-width:700px){
+
+    .card-wrapper{
+
+    grid-template-columns: 1fr 1fr;
+    
+    }
+  }
+
+  @media  (min-width:1300px){
+
+    .card-wrapper{
+
+    grid-template-columns: 1fr 1fr 1fr
+    
+    }
+  }
+  @media  (min-width:1600px){
+
+    .card-wrapper{
+
+    grid-template-columns: 1fr 1fr 1fr 1fr
+    
+    }
+  }
