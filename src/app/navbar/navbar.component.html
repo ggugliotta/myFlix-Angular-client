@@ -2,26 +2,27 @@
     <div mat-toolbar-row class="navbar-items">
         <button 
             class="navbar-item" 
-            mat-button 
-            aria-label="home" 
-            routerLink="/home"
+            mat-icon-button
+            aria-label="Browse Movies" 
+            routerLink="/movies"
         >
-            Home
+            <mat-icon>home</mat-icon>
         </button>
 
         <button 
             class="navbar-item" 
-            mat-button 
+            mat-icon-button
             aria-label="profile" 
             routerLink="/profile"
          >
-            <mat-icon>Person</mat-icon>
+            <mat-icon>person</mat-icon>
         </button>
 
         <button 
-            mat-button 
+            class="navbar-item"
+            mat-icon-button
             aria-label="logout" 
-            (click)="logout()"
+            (click)="logoutUser()"
         >
             <mat-icon>exit_to_app</mat-icon>
         </button>
