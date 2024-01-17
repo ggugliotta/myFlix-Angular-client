@@ -9,7 +9,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialo
 export class MovieDetailsComponent {
   constructor(
     @Inject(MAT_DIALOG_DATA)
-    public data: {
+    public movies: {
       title: string; 
       imageUrl: string;
       description: string;

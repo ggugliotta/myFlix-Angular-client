@@ -21,11 +21,7 @@
             <button
                 mat-button
                 color="primary"
-                (click)="openDirectorDialog(
-                    movie.Director[0].name,
-                    movie.Director[0].bio,
-                    movie.Director[0].birth,
-                    movie.Director[0].movies)"
+                (click)="openDirectorDialog({{movie.Director.Name, movie.Director.Bio, movie.Director.Birth, movie.Director.Movies}})"
             >
                 Director
             </button>

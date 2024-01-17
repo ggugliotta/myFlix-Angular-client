@@ -1,1 +1,52 @@
-<p>movie-details works!</p>
+<!-- src/app/movie-details/movie-details.component.html -->
+  <mat-card class="movie-details-dialog">
+    <mat-card-content>
+        <div>
+            <span class="label">Title: </span>
+            <span class="value">{{movies.title}}</span>
+        </div>
+        <div>
+            <span class="label">Image </span>
+            <span class="value">{{movies.imageurl}}</span>
+        </div>
+        <div>
+            <span class="label">Description: </span>
+            <span class="value">{{movies.description}}</span>
+        </div>
+        <div>
+            <span class="label">Genre: </span>
+            <span class="value">{{movies.genre}}</span>
+        </div>
+                <div>
+            <span class="label">Director: </span>
+            <span class="value">{{movies.director}}</span>
+        </div>
+        <div>
+            <span class="label">Actors: </span>
+            <span class="value">{{movies.actors}}</span>
+        </div>
+        <div>
+            <span class="label">Featured: </span>
+            <span class="value">{{movies.featured}}</span>
+        </div>
+        <div>
+            <span class="label">ReleaseYear: </span>
+            <span class="value">{{movies.ReleaseYear}}</span>
+        </div>
+        <div>
+            <span class="label">Rating: </span>
+            <span class="value">{{movies.Rating}}</span>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button
+        class="director-close-button"
+          mat-stroked-button
+          color="primary"
+          mat-dialog-close
+          aria-label="close the director details button"
+        >
+          X
+        </button>
+    </mat-card-actions>
+  </mat-card> 
