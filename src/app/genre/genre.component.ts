@@ -1,12 +1,12 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-genre',
   templateUrl: './genre.component.html',
   styleUrls: ['./genre.component.scss']
 })
-export class GenreComponent implements OnInit {
+export class GenreComponent {
   /**
    * This is the constructor for the component
    * @param data 
@@ -19,7 +19,7 @@ export class GenreComponent implements OnInit {
       description: string;
     }
   ) {}
-  ngOnInit(): void {
+  ngNoClick(): void {
       
   }
 

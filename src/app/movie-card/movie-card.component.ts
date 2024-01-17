@@ -53,8 +53,14 @@ export class MovieCardComponent {
    * Opens the director dialog to show director details once the button is clicked
    * @param director
    */
-  openDirectorDialog(): void {
+  openDirectorDialog(name: string, bio: string, birth: number, movies: string): void {
     this.dialog.open(DirectorComponent, {
+      data: {
+        name,
+        bio,
+        birth,
+        movies
+      },
       width: '400px', height: '300px'
     });
   }

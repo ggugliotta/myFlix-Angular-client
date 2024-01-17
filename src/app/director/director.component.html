@@ -1,1 +1,33 @@
+<!-- src/app/director/director.component.html -->
+  <mat-card class="director-dialog">
+    <mat-card-content>
+        <div>
+            <span class="label">Name: </span>
+            <span class="value">{{data.name}}</span>
+        </div>
+        <div>
+            <span class="label">Bio: </span>
+            <span class="value">{{data.bio}}</span>
+        </div>
+        <div>
+            <span class="label">Birth: </span>
+            <span class="value">{{data.birth}}</span>
+        </div>
+        <div>
+            <span class="label">Filmography: </span>
+            <span class="value">{{data.movies}}</span>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button
+        class="director-close-button"
+          mat-stroked-button
+          color="primary"
+          mat-dialog-close
+          aria-label="close the director details button"
+        >
+          X
+        </button>
+    </mat-card-actions>
+  </mat-card>
 
