@@ -12,12 +12,9 @@ export class MovieDetailsComponent {
     public movies: {
       title: string; 
       description: string;
-      genre: object; 
-      director: object; 
-      actors: string;
-      featured: boolean;
-      ReleaseYear: Date; 
-      rating: string; 
+      actors: string; 
+      releaseyear: Date; 
+      rating: string
     }
   ) { }
 

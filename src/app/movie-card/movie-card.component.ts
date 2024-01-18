@@ -69,12 +69,16 @@ export class MovieCardComponent {
    * @param description
    */
     openMovieDetailsDialog( title: string,
-      description: string
+      description: string, actors: string, 
+      releaseyear: Date, rating: string
      ): void {
     this.dialog.open(MovieDetailsComponent, {
       data: {
         title,
         description,
+        actors,
+        releaseyear, 
+        rating
       },
       width: '400px', height: '300px'
     });
