@@ -16,6 +16,9 @@
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     margin: 0%; 
+    border-bottom: none !important;
+    padding: 0;
+    box-shadow: none !important;
 }
 
 .card{
@@ -24,6 +27,9 @@
   padding: 0%; 
   margin: 0%;
   align-items: center; 
+  border-bottom: none !important;
+  padding: 0;
+  box-shadow: none !important;
 }
 
 
