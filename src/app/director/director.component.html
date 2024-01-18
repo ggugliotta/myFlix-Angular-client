@@ -12,7 +12,7 @@
         </div>
         <div>
             <span class="label">Birth: </span>
-            <span class="value">{{movies.director.birth}}</span>
+            <span class="value">{{movies.director.birth | date: 'yyyy'}}</span>
         </div>
         <div>
             <span class="label">Filmography: </span>
@@ -22,12 +22,12 @@
     <mat-card-actions>
         <button
         class="director-close-button"
-          mat-stroked-button
+          mat-icon-button
           color="primary"
           mat-dialog-close
           aria-label="close the director details button"
         >
-          X
+          <mat-icon class="material icons">close</mat-icon>
         </button>
     </mat-card-actions>
   </mat-card>

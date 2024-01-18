@@ -14,7 +14,7 @@ export class DirectorComponent implements OnInit {
       director: {
         name: string;
         bio: string;
-        birth: number;
+        birth: Date;
         movies: string;
       };
     }
