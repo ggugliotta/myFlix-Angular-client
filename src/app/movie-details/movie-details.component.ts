@@ -10,7 +10,6 @@ export class MovieDetailsComponent {
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public movies: {
-      title: string; 
       description: string;
       actors: string; 
       releaseyear: Date; 

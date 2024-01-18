@@ -3,19 +3,16 @@
   <mat-card class="card" style="display:flex;">
     <mat-card-content>
         <div>
-            <span class="label">Title: </span>
-            <span class="value">{{movies.title}}</span>
-        </div>
-        <div>
-            <span class="label">Description: </span>
+            <span class="label"></span>
             <span class="value">{{movies.description}}</span>
         </div>
+        <br>
         <div>
             <span class="label">Actors: </span>
             <span class="value">{{movies.actors}}</span>
         </div>
         <div>
-            <span class="label">ReleaseYear: </span>
+            <span class="label">Release Year: </span>
             <span class="value">{{movies.releaseyear}}</span>
         </div>
         <div>
@@ -31,7 +28,7 @@
           aria-label="close the movie details button"
           mat-dialog-close
         >
-          <mat-icon>X</mat-icon>
+          <mat-icon class="material icons">close</mat-icon>
         </button>
     </mat-card-actions>
   </mat-card> 

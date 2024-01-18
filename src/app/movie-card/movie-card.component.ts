@@ -44,9 +44,15 @@ export class MovieCardComponent {
  * Opens the genre dialog to show genre details once the button is clicked
  * @param genre
  */
-  openGenreDialog(): void {
+  openGenreDialog(name: string, description: string ): void {
     this.dialog.open(GenreComponent, {
-        width: '400px', height: '300px'
+      data: {
+        genre: {
+         name,
+          description
+        },
+      },
+      width: '400px', height: '300px'
     });
   }
   /**
@@ -68,13 +74,12 @@ export class MovieCardComponent {
    * Opens the movie details dialog to show movie details once the button is clicked
    * @param description
    */
-    openMovieDetailsDialog( title: string,
+    openMovieDetailsDialog( 
       description: string, actors: string, 
       releaseyear: Date, rating: string
      ): void {
     this.dialog.open(MovieDetailsComponent, {
       data: {
-        title,
         description,
         actors,
         releaseyear, 

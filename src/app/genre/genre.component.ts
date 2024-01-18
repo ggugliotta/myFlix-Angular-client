@@ -14,9 +14,11 @@ export class GenreComponent {
    */
   constructor(
     @Inject(MAT_DIALOG_DATA)
-    public data: {
-      name: string;
-      description: string;
+    public movies: {
+      genre: {
+        name: string;
+        description: string; 
+      };
     }
   ) {}
   ngNoClick(): void {

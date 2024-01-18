@@ -1,20 +1,26 @@
+<!-- src/app/genre/genre.component.html -->
 <div class="card wrapper">
-<mat-card class="card" style="display:flex;">
-    <mat-card-title>
-        <h3 class="genre-dialog-title">Genre: </h3>
-    </mat-card-title>
-    <br />
-    <mat-dialog-content class="genre-dialog-content">
-        Definiton: 
-    </mat-dialog-content>
-    <button 
-        class="movie-details-close-button"
-        mat-icon-button
-        color="primary"
-        aria-label="close the movie details button"
-        mat-dialog-close
-     >
-        <mat-icon>X</mat-icon>
-    </button>
-</mat-card>
+  <mat-card class="card" style="display:flex;">
+    <mat-card-content>
+        <div>
+            <span class="label">Genre: </span>
+            <span class="value">{{movies.genre.name}}</span>
+        </div>
+        <div>
+            <span class="label">Description: </span>
+            <span class="value">{{movies.genre.description}}</span>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button
+          class="movie-details-close-button"
+          mat-icon-button
+          color="primary"
+          aria-label="close the movie details button"
+          mat-dialog-close
+        >
+          <mat-icon class="material icons">close</mat-icon>
+        </button>
+    </mat-card-actions>
+  </mat-card> 
 </div>
