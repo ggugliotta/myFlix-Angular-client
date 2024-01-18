@@ -68,14 +68,19 @@ export class MovieCardComponent {
    * Opens the movie details dialog to show movie details once the button is clicked
    * @param description
    */
-    openMovieDetailsDialog(): void {
+    openMovieDetailsDialog( title: string,
+      description: string
+     ): void {
     this.dialog.open(MovieDetailsComponent, {
+      data: {
+        title,
+        description,
+      },
       width: '400px', height: '300px'
     });
   }
 
 }
-
 
 /**
  * Check to see if the movie is in the user's list of favorites
