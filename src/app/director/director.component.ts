@@ -10,11 +10,13 @@ export class DirectorComponent implements OnInit {
 
   constructor(
     @Inject(MAT_DIALOG_DATA)
-    public data: {
-      name: string;
-      bio: string;
-      birth: number;
-      movies: string;
+    public movies: {
+      director: {
+        name: string;
+        bio: string;
+        birth: number;
+        movies: string;
+      };
     }
   ) { }
 

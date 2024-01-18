@@ -62,10 +62,12 @@ export class MovieCardComponent {
   openDirectorDialog(name: string, bio: string, birth: number, movies: string): void {
     this.dialog.open(DirectorComponent, {
       data: {
-        name,
-        bio,
-        birth,
-        movies
+        director: {
+          name,
+          bio,
+          birth,
+          movies
+        },
       },
       width: '400px', height: '300px'
     });
