@@ -9,6 +9,11 @@ mat-card-subtitle{
   margin-bottom: 15px; 
 }
 
+.favorite-button {
+  align-items: right;
+  justify-content: right;
+}
+
 
 .card-wrapper{
     display: grid;
@@ -36,6 +41,14 @@ mat-card-subtitle{
     object-fit: hidden;
     width: 400px;
     height: 400px;
+}
+
+.dialogs {
+  align-items: center; 
+}
+
+.mat-card-footer {
+  margin: 100px; 
 }
 
 

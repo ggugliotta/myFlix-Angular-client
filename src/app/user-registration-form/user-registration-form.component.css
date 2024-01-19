@@ -1,0 +1,8 @@
+mat-card-title{
+    align-items: right; 
+    align-content: right;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: bold; 
+    color: #000000;
+}
