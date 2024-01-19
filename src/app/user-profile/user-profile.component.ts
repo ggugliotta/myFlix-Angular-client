@@ -61,17 +61,6 @@ export class UserProfileComponent implements OnInit {
   }
   */
 
-  deleteFavoriteMovie(favoriteMovie: string): void {
-    this.fetchApiData.deleteFavoriteMovie().subscribe((favoriteMovie) => {
-      this.favoriteMovies = this.favoriteMovies.filter((movie: any) => {
-        return movie._id !== favoriteMovie;
-      });
-      this.snackBar.open('Movie removed from favorites!', 'OK', {
-        duration: 2000,
-      });
-    });
-  }
-
   /**
    * Deletes user account and returns to welcome page
    */

@@ -110,7 +110,7 @@ export class FetchApiDataService {
   }
 
   // Making the api call for adding a movie to a user's list of favorites
-  addFavoriteMovie(movieId: string): Observable<any> {
+  addToFavorites(movieId: string): Observable<any> {
     const token = localStorage.getItem('token');
     const username = JSON.parse(localStorage.getItem('user') || '{}');
     return this.http.post(apiUrl + `users/user/${movieId}`, {}, {
@@ -149,14 +149,15 @@ export class FetchApiDataService {
   }
 
   // Making the api call for deleting a movie from a user's list of favorites
-  deleteFavoriteMovie(): Observable<any> {
+  removeFavoriteMovie(): Observable<any> {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
     return this.http.delete(apiUrl + `users/${username}/movies/:MovieID`, {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
       })}).pipe(
-      catchError(this.handleError)
+        map(this.extractResponseData),
+        catchError(this.handleError)
     );
   }
 

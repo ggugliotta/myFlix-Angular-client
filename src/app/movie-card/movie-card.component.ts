@@ -98,38 +98,18 @@ export class MovieCardComponent {
  * @param movie_id  
  * @returns boolean
  */
-  /* public isFavorite(movieId: string): boolean {
-    return favoriteMovies.(movieId);
-  }
 
 
   /** 
    * Adds the movie to the user's list of favorites when icon is clicked
+   * or remove on click if it is already a favorite
    * @param movie_id
    */
-  /*public addToFavoriteMovies(movie_id: string){
-    this.user.favoriteMovies.push(movie_id);
-    localStorage.setItem('user', JSON.stringify(this.user));
-      this.fetchApiData.addFavoriteMovie(movie_id).subscribe((response) => {
-      console.log(response);
-      })
-      console.log('Added to favorites!', 'OK', {
-        duration: 2000
-      });
-  }
 
 
   /**
    * Removes the movie from the user's list of favorites when icon is clicked
    * @param movie_id
+   * @returns updated user info
    */
- /* public removeFromFavoriteMovies(movie_id: any){
-    this.user.favoriteMovies = this.user.favoriteMovies.filter((id: string) => id !== movie_id);
-    localStorage.setItem('user', JSON.stringify(this.user));
-      this.fetchApiData.deleteFavoriteMovie().subscribe((response) => {
-      console.log(response);
-      })
-      console.log('Removed from favorites!', 'OK', {
-        duration: 2000
-      });
-  }*/
+ 
