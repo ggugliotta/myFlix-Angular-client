@@ -7,28 +7,28 @@ import { UserRegistrationFormComponent } from '../user-registration-form/user-re
 import { WelcomePageComponent } from '../welcome-page/welcome-page.component';
 
 type User = {
-  _id?: string, 
-  username?: string, 
-  password?: string, 
-  email?: string, 
-  favoriteMovies?: any[]
+  _id?: string;
+  username?: string;
+  password?: string;
+  email?: string;
+  favoriteMovies?: any[];
 };
 
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
-  styleUrl: './user-profile.component.css'
+  styleUrl: './user-profile.component.css',
 })
-export class UserProfileComponent implements OnInit {
 
-  user: any = {Name: '', Username: '', Password: '', Email: '', Birthday: ''};
+export class UserProfileComponent implements OnInit {
+  user: any = { Name: '', Username: '', Password: '', Email: '', Birthday: '' };
   favoriteMovies: any[] = [];
 
   constructor(
     public fetchApiData: FetchApiDataService,
     public router: Router,
     public snackBar: MatSnackBar
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.loadUser();
@@ -36,9 +36,11 @@ export class UserProfileComponent implements OnInit {
 
   public loadUser(): void {
     this.user = JSON.parse(localStorage.getItem('user') || '{}');
-     this.fetchApiData.getAllMovies().subscribe((movies) => {
-     this.favoriteMovies = movies.filter((movie: any) => this.user.favoriteMovies?.includes(movies._id));
-     });
+    this.fetchApiData.getAllMovies().subscribe((movies) => {
+      this.favoriteMovies = movies.filter((movie: any) =>
+        this.user.favoriteMovies?.includes(movies._id)
+      );
+    });
   }
 
   /**
@@ -62,12 +64,12 @@ export class UserProfileComponent implements OnInit {
   deleteFavoriteMovie(favoriteMovie: string): void {
     this.fetchApiData.deleteFavoriteMovie().subscribe((favoriteMovie) => {
       this.favoriteMovies = this.favoriteMovies.filter((movie: any) => {
-      return movie._id !== favoriteMovie;
+        return movie._id !== favoriteMovie;
       });
       this.snackBar.open('Movie removed from favorites!', 'OK', {
-        duration: 2000
+        duration: 2000,
       });
-    })
+    });
   }
 
   /**
@@ -78,7 +80,7 @@ export class UserProfileComponent implements OnInit {
       localStorage.clear();
       this.router.navigate(['welcome']);
       this.snackBar.open('Profile deleted successfully!', 'OK', {
-        duration: 2000
+        duration: 2000,
       });
     });
   }
