@@ -1,85 +1,74 @@
+<app-navbar div class="navbar"></app-navbar>
 <div class="profile-page">
-  <div class="profile-container">
-    <div class="info-container">
-      <div class="info">
-        <h1>Profile</h1>
-        <p>
-          Username: <b> {{ user.Username }}</b>
-        </p>
-        <p>
-          Email: <b> {{ user.Email }} </b>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
+  <div class="Profile-data">
+  <h1>Profile</h1>
+  <div mat-card class="form-wrapper">
+      <mat-card-content class="form">
+      <mat-form-field class="form-item"> Name: 
+        <input
+         matInput
+         placeholder="Name"
+          [(ngModel)]="user.Name"
+          type="text"
+         name="name"
+         required
+        />
+      </mat-form-field>
 
-<div mat-card class="form-wrapper">
-  <mat-card-title>Profile</mat-card-title>
+      <mat-form-field class="form-item"> Username: 
+        <input
+          matInput
+          placeholder="Username"
+          [(ngModel)]="user.Username"
+          type="text"
+          name="username"
+          required
+        /> 
+      </mat-form-field>
 
-  <mat-card-content class="form">
-    <mat-form-field class="form-item">
-      <input
-        matInput
-        placeholder="Name"
-        [(ngModel)]="user.Name"
-        type="text"
-        name="name"
-        required
-      />
-    </mat-form-field>
+      <mat-form-field> Email: 
+        <input
+          matInput
+          placeholder="Email"
+          [(ngModel)]="user.Email"
+          type="text"
+          name="email"
+          required
+        />
+      </mat-form-field>
 
-    <mat-form-field class="form-item">
-      <input
-        matInput
-        placeholder="Username"
-        [(ngModel)]="user.Username"
-        type="text"
-        name="username"
-        required
-      />
-    </mat-form-field>
+      <mat-form-field> Password: 
+        <input
+         matInput
+         placeholder="Password"
+          [(ngModel)]="user.Password"
+          type="text"
+          name="password"
+          required
+        />
+      </mat-form-field>
+    </mat-card-content>
 
-    <mat-form-field>
-      <input
-        matInput
-        placeholder="Email"
-        [(ngModel)]="user.Email"
-        type="text"
-        name="email"
-        required
-      />
-    </mat-form-field>
-
-    <mat-form-field>
-      <input
-        matInput
-        placeholder="Password"
-        [(ngModel)]="user.Password"
-        type="text"
-        name="password"
-        required
-      />
-    </mat-form-field>
-  </mat-card-content>
-
-  <mat-card-actions>
-    <button mat-raised-button color="primary">Update</button>
-  </mat-card-actions>
-</div>
-
-<div style="display: flex">
-  <mat-card class="favoriteMovies">
-    <mat-card-header>
-      <mat-card-title>{{ user.Username }}'s Favorite Movies</mat-card-title>
-    </mat-card-header>
-    <mat-dialog-content>
-      <mat-card-subtitle *ngFor="let favoriteMovie of favoriteMovies">
-        {{ favoriteMovie.Title }}
-      </mat-card-subtitle>
-    </mat-dialog-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary">Remove from Favorites</button>
+      <button mat-raised-button color="primary">Update</button>
     </mat-card-actions>
-  </mat-card>
+  </div>
+  <br>
+
+  <div style="display: flex">
+    <mat-card class="favoriteMovies">
+      <mat-card-header>
+       <mat-card-title>{{ user.Name }}'s Favorite Movies</mat-card-title>
+      </mat-card-header>
+      <mat-dialog-content>
+        <mat-card-subtitle *ngFor="let favoriteMovie of favoriteMovies">
+          {{ favoriteMovie.Title }}
+        </mat-card-subtitle>
+      </mat-dialog-content>
+      <mat-card-actions>
+       <button mat-raised-button color="primary">Remove from Favorites</button>
+     </mat-card-actions>
+    </mat-card>
+  </div>
+ </div>
 </div>

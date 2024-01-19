@@ -1,3 +1,7 @@
+.home-page{
+  margin: 0px;
+}
+
 mat-card-title{
     font-weight: bold;
     margin-bottom: 2px;
@@ -47,11 +51,18 @@ mat-card-subtitle{
   align-items: center; 
 }
 
-.mat-card-footer {
-  margin: 100px; 
+mat-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 0px;
 }
-
-
 
   @media  (min-width:700px){
 

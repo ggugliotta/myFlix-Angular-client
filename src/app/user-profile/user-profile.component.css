@@ -1,0 +1,39 @@
+.profile-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+.profile-data{
+    align-items: center;
+}
+
+.navbar{
+    margin: 20px;
+}
+  @media  (min-width:700px){
+
+    .card-wrapper{
+
+    grid-template-columns: 1fr 1fr;
+    
+    }
+  }
+
+  @media  (min-width:1300px){
+
+    .card-wrapper{
+
+    grid-template-columns: 1fr 1fr 1fr
+    
+    }
+  }
+  @media  (min-width:1600px){
+
+    .card-wrapper{
+
+    grid-template-columns: 1fr 1fr 1fr 1fr
+    
+    }
+}

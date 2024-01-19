@@ -7,6 +7,19 @@
     z-index: 1000;
 }
 
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
 
 .navbar-items{
     display: block;
@@ -14,4 +27,6 @@
     justify-content: center; 
     align-items: center; 
 }
+
+
 
