@@ -12,7 +12,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
  <br/>
 <p align="center">
   <a href="https://github.com/ggugliotta/myFlix-Angular-client">
-    <img src="Flickette Home Page Screenshot.png" alt="Logo">
+    <img src="Flickette Angular Home Page.png" alt="Logo">
   </a>
 
   <p align="center">
