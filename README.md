@@ -39,11 +39,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 - 💬 Ask me about **how I like working with Angular! Check out Flickette made with React here: **
 
-- 📫 Reach me at **gabriellagugliotta96@gmail.com**
+- 📫 Reach me at **gabriellagugliotta1@gmail.com**
 
 - 📄 Learn more about me [linkedin.com/gabriella-gugliotta](linkedin.com/gabriella-gugliotta)
 
-- ⚡ Fun fact **My next goal is to learn Python!**
+- ⚡ Fun fact **My next goal is to create an Ecommerce project!**
 
 
 ## Development server
