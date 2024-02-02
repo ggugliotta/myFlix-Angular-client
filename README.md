@@ -1,6 +1,12 @@
-# MyFlixAngularClient
+# Flickette (Front-End UI for Single Page Application built with Angular)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.7.
+
+ <br/>
+<p align="center">
+  <a href="https://github.com/ggugliotta/myFlix-Angular-client">
+    <img src="Flickette Logo .png" alt="Logo">
+  </a>
 
  <h1 align="center">Hi 👋, I'm Gabriella Gugliotta</h1>
 <h3 align="center">I am a passionate full stack developer from the United States</h3>
