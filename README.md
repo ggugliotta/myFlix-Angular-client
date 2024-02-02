@@ -4,8 +4,9 @@
     <img src="Flickette Logo .png" alt="Logo">
   </a>
 
-# Flickette (Front-End UI for Single Page Application built with Angular)
+# [Flickette](www.github.com/ggugliotta) (Front-End UI for Single Page Application built with Angular)
 
+[View the Flickette website here!](www.github.com/ggugliotta)
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.7.
 
 - 🔭 This application is a single-page app (SPA) responsive app with routing, interactions, multiple interface views, and a contemporary user experience.
