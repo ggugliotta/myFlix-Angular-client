@@ -37,7 +37,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 - 👨‍💻 All of my projects are available at [github.com/ggugliotta](github.com/ggugliotta)
 
-- 💬 Ask me about **how I like working with Angular! Check out Flickette made with React here: **
+- 💬 Ask me about **how I like working with Angular! Check out Flickette made with** [React](https://github.com/ggugliotta/myFlix-client).
 
 - 📫 Reach me at **gabriellagugliotta1@gmail.com**
 
