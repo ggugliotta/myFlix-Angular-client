@@ -1,11 +1,13 @@
-# MyFlixAngularClient
+ <br/>
+<p align="center">
+  <a href="https://github.com/ggugliotta/myFlix-Angular-client">
+    <img src="Flickette Logo .png" alt="Logo">
+  </a>
 
+# [Flickette](www.github.com/ggugliotta) (Front-End UI for Single Page Application built with Angular)
+
+[View the Flickette website here!](www.github.com/ggugliotta)
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.7.
-
- <h1 align="center">Hi 👋, I'm Gabriella Gugliotta</h1>
-<h3 align="center">I am a passionate full stack developer from the United States</h3>
-
-<h1 align="center">Welcome to the client-side of Flickette </h1>
 
 - 🔭 This application is a single-page app (SPA) responsive app with routing, interactions, multiple interface views, and a contemporary user experience.
 
@@ -29,7 +31,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     Flickette Movie View
     <br/>
 
-
 - Flickette is a movie application built as a gateway to the captivating world of women-led cinema! Dive into a curated collection of movies featuring women-led content that not only entertain but also pass the Bechdel test - a measure of female representation in film. Unleash the power of storytelling that breaks stereotypes and resonates with the diverse narratives of women. Search, discover, and store your favorite films effortlessly on Flickette, where every click contributes to celebrating and empowering women in the world of cinema. Users are able to search through movies, learn about them, and add them to their user profiles. 
 - This app is [hosted online]() and can be viewed on any device at any time anywhere for complete user experience. This [client-side project](github.com/ggugliotta/myFlix-Angular-client) supports the [server-side portion of this application](github.com/ggugliotta/movie-app) and was created to facilitate user requests and render responses from the server-side via multiple interface views. This app was built in ES2015+ with the full MEAN stack (MongoDB, Express.js, Angular, Node.js), and Angular Material UI library. A full list of project dependencies are outlined below. 
 
@@ -37,13 +38,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 - 👨‍💻 All of my projects are available at [github.com/ggugliotta](github.com/ggugliotta)
 
-- 💬 Ask me about **how I like working with Angular! Check out Flickette made with React here: **
+- 💬 Ask me about **how I like working with Angular! Check out Flickette made with** [React](https://github.com/ggugliotta/myFlix-client).
 
-- 📫 Reach me at **gabriellagugliotta96@gmail.com**
+- 📫 Reach me at **gabriellagugliotta1@gmail.com**
 
 - 📄 Learn more about me [linkedin.com/gabriella-gugliotta](linkedin.com/gabriella-gugliotta)
 
-- ⚡ Fun fact **My next goal is to learn Python!**
+- ⚡ Fun fact **My next goal is to create an Ecommerce project!**
 
 
 ## Development server
